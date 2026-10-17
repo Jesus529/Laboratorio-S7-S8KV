@@ -41,9 +41,9 @@ class _ProductosAppState extends State<ProductosApp> {
     Producto('Monitor', 'Monitor LED', 900),
   ];
 
-  // setState permite actualizar los datos que aparecen en pantalla.
-  // Se utiliza cuando cambia el menu o se modifica un producto.
-  // Flutter vuelve a ejecutar build para mostrar los cambios.
+  // setState permite actualizar los datos que aparecen en pantalla
+  // Se utiliza cuando cambia el menu o se modifica un producto
+  // Flutter vuelve a ejecutar build para mostrar los cambios
   void cambiarPantalla(String valor) {
     setState(() {
       pantalla = valor;
@@ -192,9 +192,9 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void dispose() {
-    // dispose se ejecuta cuando esta pantalla deja de utilizarse.
-    // Los controladores pueden consumir recursos si no se liberan.
-    // dispose() evita mantener controladores que ya no necesitamos.
+    // dispose se ejecuta cuando esta pantalla deja de utilizarse
+    // Los controladores pueden consumir recursos si no se liberan
+    // dispose() evita mantener controladores que ya no necesitamos
     correoController.dispose();
     passwordController.dispose();
     super.dispose();
@@ -425,9 +425,9 @@ class _RegistroPageState extends State<RegistroPage> {
     final nombre = nombreController.text.trim();
     final descripcion = descripcionController.text.trim();
 
-    // double.tryParse convierte el texto en un numero decimal.
-    // Si el texto no es numerico, devuelve null en vez de fallar.
-    // Esto permite validar el precio antes de guardar el producto.
+    // double.tryParse convierte el texto en un numero decimal
+    // Si el texto no es numerico, devuelve null en vez de fallar
+    // Esto permite validar el precio antes de guardar el producto
     final precio = double.tryParse(
       precioController.text.trim().replaceAll(',', '.'),
     );
@@ -506,9 +506,9 @@ class ListaPage extends StatelessWidget {
     BuildContext context,
     Producto producto,
   ) async {
-    // showDialog muestra una ventana encima de la pantalla actual.
-    // La ventana pregunta si el usuario realmente quiere eliminar.
-    // El resultado true confirma la accion y false la cancela.
+    // showDialog muestra una ventana encima de la pantalla actual
+    // La ventana pregunta si el usuario realmente quiere eliminar
+    // El resultado true confirma la accion y false la cancela
     final confirmado = await showDialog<bool>(
       context: context,
       builder: (dialogContext) => AlertDialog(
@@ -697,9 +697,9 @@ class _PerfilPageState extends State<PerfilPage> {
   void initState() {
     super.initState();
 
-    // initState se ejecuta al crear la pantalla por primera vez.
-    // Aqui colocamos los datos actuales dentro de los campos.
-    // Asi el perfil muestra la informacion guardada anteriormente.
+    // initState se ejecuta al crear la pantalla por primera vez
+    // Aqui colocamos los datos actuales dentro de los campos
+    // Asi el perfil muestra la informacion guardada anteriormente
     nombreController = TextEditingController(text: widget.nombre);
     correoController = TextEditingController(text: widget.correo);
     telefonoController = TextEditingController(text: widget.telefono);
@@ -789,9 +789,9 @@ Widget avatarPerfil(double radio) {
       child: SizedBox(
         width: radio * 2,
         height: radio * 2,
-        // Image.network carga la foto desde una direccion de internet.
-        // errorBuilder muestra un reemplazo si el enlace no funciona.
-        // Asi la pantalla conserva el avatar aunque no cargue Pinterest.
+        // Image.network carga la foto desde una direccion de internet
+        // errorBuilder muestra un reemplazo si el enlace no funciona
+        // Asi la pantalla conserva el avatar aunque no cargue Pinterest
         child: Image.network(
           fotoPerfil,
           fit: BoxFit.cover,
